@@ -1,0 +1,15 @@
+version: "2"
+services:
+  app:
+    container_name: sam-node
+    restart: always
+    image: amazus/sam-apis
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    container_name: sam-mongo
+    image: amazus/sam-data
+    ports:
+      - "27017:27017"
