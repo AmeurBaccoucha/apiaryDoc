@@ -1,5 +1,14 @@
 version: "2"
 services:
+  jet:
+    container_name: sam-jet
+    image: amazus/sam-ui
+    ports:
+      - "8000:8000"
+    links:
+      - app
+    depends_on:
+      - app 
   app:
     container_name: sam-node
     restart: always
@@ -8,6 +17,8 @@ services:
       - "3000:3000"
     links:
       - mongo
+    depends_on:
+      - mongo  
   mongo:
     container_name: sam-mongo
     image: amazus/sam-data
