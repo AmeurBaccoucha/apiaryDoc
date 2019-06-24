@@ -1,0 +1,1171 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# SAM 1.0 APIs Definition 
+
+SAM APIs allow to exchange data between our oracle Jet user interface and the Mongo database.
+
+## Country Collection [/sam/country]
+
+### List All Country [GET]
+
+You may get all the list of country exist in your database.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "_id": "5c5979dc2441bf0007075f6d",
+                "name": "Tunisie",
+                "phoneRef": "+216"
+            }
+        ]
+
+### Add a New Country [POST]
+
+You may add a new country to the list using this action. It takes a JSON
+object containing a country name and the phone reference.
+
++ Request (application/json)
+
+        {
+            "name": "France",
+            "phoneRef": "+33"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Country Created successfully
+
+### Get a Country [GET /sam/country/{id}]
+
+You may get a unique country from the database using the id.
+
++ Parameters
+    + id: 5c5979dc2441bf0007075f6d
+    
++ Response 200 (application/json)
+
+            {
+                "_id": "5c5979dc2441bf0007075f6d",
+                "name": "Tunisia",
+                "phoneRef": "+216"
+            }
+            
+            
+### Modify a Country [PUT /sam/country/{id}]
+
+You may modify a country from the database using the id.
+
++ Parameters
+    + id: 5c5979dc2441bf0007075f6d
+    
++ Request (application/json)
+
+        {
+            "name": "Tunisia",
+            "phoneRef": "00 216"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Country udpated.
+            
+### Delete a Country [DELETE /sam/country/{id}]
+
+You may delete a country from the database using the id.
+
++ Parameters
+    + id: 5c5979dc2441bf0007075f6d
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Deleted successfully!
+    
+
+
+## Activity Collection [/sam/activity]
+
+### List All Activity [GET]
+
+You may get all the list of activity exist in your database.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "_id": "5c597a372441bf0007075f6e",
+                "name": "aviation",
+                "description": " refers to the activities surrounding mechanical flight and the aircraft industry"
+            }
+        ]
+
+### Add a New Activity [POST]
+
+You may add a new activity to the list using this action. It takes a JSON
+object containing a activity name and a description.
+
++ Request (application/json)
+
+        {
+            "name": "retails",
+            "description": "process of selling consumer goods or services to customers through multiple channels of distribution to earn a profit."
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Activity Created successfully
+
+
+### Get a Activity [GET /sam/activity/{id}]
+
+You may get a unique activity from the database using the id.
+
++ Parameters
+    + id: 5c597a372441bf0007075f6e
+    
++ Response 200 (application/json)
+
+            {
+                "_id": "5c597a372441bf0007075f6e",
+                "name": "aviation",
+                "description": " refers to the activities surrounding mechanical flight and the aircraft industry"
+            }
+            
+            
+### Modify a Activity [PUT /sam/activity/{id}]
+
+You may modify a activity from the database using the id.
+
++ Parameters
+    + id: 5c597a372441bf0007075f6e
+    
++ Request (application/json)
+
+        {
+            "name": "aviation",
+            "description": "It refers to the activities surrounding mechanical flight and the aircraft industry"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Activity udpated.
+            
+### Delete a Activity [DELETE /activity/{id}]
+
+You may delete a activity from the database using the id.
+
++ Parameters
+    + id: 5c597a372441bf0007075f6e
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Deleted successfully!
+
+## TaskType Collection [/sam/taskType]
+
+### List All TaskType [GET]
+
+You may get all the list of tasks types exist in your database.
+
++ Response 200 (application/json; charset=utf-8)
+
+        [
+            {
+                "_id": "5c597af82441bf0007075f70",
+                "type": "send e-mail"
+            }
+        ]
+
+### Add a New TaskType [POST]
+
+You may add a new Task type to the list using this action. It takes a JSON
+object containing the type of the task.
+
++ Request (application/json)
+
+        {
+            "type": "phone call"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Task Type Created successfully
+
+
+### Get a TaskType [GET /sam/taskType/{id}]
+
+You may get a unique task type from the database using the id.
+
++ Parameters
+    + id: 5c597af82441bf0007075f70
+    
++ Response 200 (application/json)
+
+            {
+                "_id": "5c597af82441bf0007075f70",
+                "type": "send e-mail"
+            }
+            
+            
+### Modify a TaskType [PUT /sam/taskType/{id}]
+
+You may modify a task type from the database using the id.
+
++ Parameters
+    + id: 5c597af82441bf0007075f70
+    
++ Request (application/json)
+
+        {
+            "type": "send mail"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Task Type udpated.
+            
+### Delete a TaskType [DELETE /sam/taskType/{id}]
+
+You may delete a task type from the database using the id.
+
++ Parameters
+    + id: 5c597af82441bf0007075f70
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Deleted successfully!
+
+
+## Product Collection [/sam/product]
+
+### List All Products [GET]
+
+You may get all the list of products exist in your database.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "_id": "5c597a752441bf0007075f6f",
+                "type": "ODA"
+            }
+        ]
+
+### Add a New Product [POST]
+
+You may add a new product to the list using this action. It takes a JSON
+object containing the type of the product.
+
++ Request (application/json)
+
+        {
+            "type": "DevOps"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Task Type Created successfully
+
+
+### Get a Product [GET /sam/product/{id}]
+
+You may get a unique product from the database using the id.
+
++ Parameters
+    + id: 5c597a752441bf0007075f6f
+    
++ Response 200 (application/json)
+
+            {
+                "_id": "5c597a752441bf0007075f6f",
+                "type": "ODA"
+            }
+            
+            
+### Modify a Product [PUT /sam/product/{id}]
+
+You may modify a product from the database using the id.
+
++ Parameters
+    + id: 5c597a752441bf0007075f6f
+    
++ Request (application/json)
+
+        {
+            "type": "DevCS"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Product udpated.
+            
+### Delete a Product [DELETE /sam/product/{id}]
+
+You may delete a product from the database using the id.
+
++ Parameters
+    + id: 5c597a752441bf0007075f6f
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Deleted successfully!
+
+
+## Customer Collection [/sam/customer]
+
+### List All Customers [GET]
+
+You may get all the list of customers exist in your database.
+
++ Response 200 (application/json)
+
+        [
+            { 
+                "_id": "5c61a20c3bb90e00067b1569",
+                "activity": { 
+                    "_id": "5c597a372441bf0007075f6e",
+                    "name": "IT",
+                    "description": "responsable de l'ensemble des composants matériels.."
+                },
+                "country": {
+                    "_id": "5c5979dc2441bf0007075f6d",
+                    "name": "Tunisie",
+                    "phoneRef": "+216"
+                },
+                "name": "Amazus",
+                "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                "email": "contact@amazus.net",
+                "phone": "71 70 81 80",
+                "area": "cloud, devops, integration, mobile & chatbot,....",
+                "empNum": 4,
+                "sector": false,
+                "website": "www.amazus.net",
+                "facebook": "https://www.facebook.com/Amazusconsulting/",
+                "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                
+            }
+        ]
+
+### Add a New Customer [POST]
+
+You may add a new customer to the list using this action. It takes a JSON
+object containing the activity domain, the country, the entreprise name, the adress, the email, the phone number, the area of expertise, the number of empolyee,
+if the sector is public or not, the website link, the facebook likn and the linkedin link.
+
++ Request (application/json)
+
+        {
+            "activity": "5c597a372441bf0007075f6e",
+            "country": "5c5979dc2441bf0007075f6d",
+            "name": "Amazus",
+            "address": "5 Avenue des chasseurs , Paris , France 75017, FR",
+            "email": "contact@amazus.net",
+            "phone": "+33 6 16 21 22 69",
+            "area": "cloud, devops, integration, mobile & chatbot,....",
+            "empNum": 4,
+            "sector": false,
+            "website": "www.amazus.net",
+            "facebook": "https://www.facebook.com/Amazusconsulting/",
+            "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+              Customer Created successfully
+
+
+### Get a Customer [GET /sam/customer/{id}]
+
+You may get a unique customer from the database using the id.
+
++ Parameters
+    + id: 5c61a20c3bb90e00067b1569
+    
++ Response 200 (application/json)
+
+            { 
+                "_id": "5c61a20c3bb90e00067b1569",
+                "activity": { 
+                    "_id": "5c597a372441bf0007075f6e",
+                    "name": "IT",
+                    "description": "responsable de l'ensemble des composants matériels.."
+                },
+                "country": {
+                    "_id": "5c5979dc2441bf0007075f6d",
+                    "name": "Tunisie",
+                    "phoneRef": "+216"
+                },
+            
+                "name": "Amazus",
+                "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                "email": "contact@amazus.net",
+                "phone": "71 70 81 80",
+                "area": "cloud, devops, integration, mobile & chatbot,....",
+                "empNum": 4,
+                "sector": false,
+                "website": "www.amazus.net",
+                "facebook": "https://www.facebook.com/Amazusconsulting/",
+                "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                
+            }
+            
+            
+### Modify a Customer [PUT /sam/customer/{id}]
+
+You may modify a customer from the database using the id.
+
++ Parameters
+    + id: 5c61a20c3bb90e00067b1569
+    
++ Request (application/json)
+
+            { 
+                "activity": "5c597a372441bf0007075f6e",
+                "country": "5c5979dc2441bf0007075f6d",
+                "name": "Amazus",
+                "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                "email": "contact@amazus.net",
+                "phone": "71 70 81 80",
+                "area": "cloud, devops, integration, mobile & chatbot,PCS",
+                "empNum": 4,
+                "sector": false,
+                "website": "www.amazus.net",
+                "facebook": "https://www.facebook.com/Amazusconsulting/",
+                "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                
+            }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Customer udpated.
+            
+### Delete a Customer [DELETE /sam/customer/{id}]
+
+You may delete a customer from the database using the id.
+
++ Parameters
+    + id: 5c61a20c3bb90e00067b1569
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+              Customer Created successfully
+              
+### Filtering customers [GET /sam/customer/{activity}/{name}]
+
+You may filter the list of customers from the database using activity and the name attribute.
+
++ Parameters
+    + activity: IT
+    + name: Amazus
+    
++ Response 200 (application/json)
+
+            [
+                { 
+                    "_id": "5c61a20c3bb90e00067b1569",
+                    "activity": { 
+                        "_id": "5c597a372441bf0007075f6e",
+                        "name": "IT",
+                        "description": "responsable de l'ensemble des composants matériels.."
+                    },
+                    "country": {
+                        "_id": "5c5979dc2441bf0007075f6d",
+                        "name": "Tunisie",
+                        "phoneRef": "+216"
+                    },
+                
+                    "name": "Amazus",
+                    "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                    "email": "contact@amazus.net",
+                    "phone": "71 70 81 80",
+                    "area": "cloud, devops, integration, mobile & chatbot,....",
+                    "empNum": 4,
+                    "sector": false,
+                    "website": "www.amazus.net",
+                    "facebook": "https://www.facebook.com/Amazusconsulting/",
+                    "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                    
+                }
+            ]
+            
+## Opportunity Collection [/sam/opportunity]
+
+### List All Opportunities [GET]
+
+You may get all the list of opportunities exist in your database.
+
++ Response 200 (application/json)
+
+        [
+            { 
+                "_id": "5c597cd80509961af7a9b28f",
+                "customer": { 
+                        "_id": "5c61a20c3bb90e00067b1569",
+                        "activity": "5c597a372441bf0007075f6e",
+                        "country": "5c5979dc2441bf0007075f6d",
+                        "name": "Amazus",
+                        "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                        "email": "contact@amazus.net",
+                        "phone": "71 70 81 80",
+                        "area": "cloud, devops, integration, mobile & chatbot,....",
+                        "empNum": 4,
+                        "sector": false,
+                        "website": "www.amazus.net",
+                        "facebook": "https://www.facebook.com/Amazusconsulting/",
+                        "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                    },
+                
+                "product": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "type": "ODA"
+                    },
+                "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },    
+                "projectName": "SAM 1.0",
+                "department": "commercial",
+                "type": "RFP",
+                "budget": 0,
+                "description": "internal project",
+                "closeDate": "2019-01-05T16:00:00Z",
+                "status": "archived",
+                "favorite": true
+            }
+        ]
+
+### Add a New Opportunity [POST]
+
+You may add a new opportunity to the list using this action. It takes a JSON
+object containing the customer, the product, the vis-a-vis contact, the project name, the department, the type of the opportunity, the budget,
+a description, the close date and the opportunity status.
+
++ Request (application/json)
+
+        { 
+            "customer": "5c61a20c3bb90e00067b1569",
+            "product": "5c597a752441bf0007075f6f",
+            "user": "5c597c5a0509961af7a9b28e",
+            "projectName": "SAM 1.0",
+            "department": "commercial",
+            "type": "RFP",
+            "budget": 0,
+            "description": "internal project",
+            "closeDate": "2019-01-05T16:00:00Z",
+            "status": "archived",
+            "favorite": true
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Opportunity Created successfully
+
+### Get a Opportunity [GET /sam/opportunity/{id}]
+
+You may get a unique opportunity from the database using the id.
+
++ Parameters
+    + id: 5c597cd80509961af7a9b28f
+    
++ Response 200 (application/json)
+
+            { 
+                "_id": "5c597cd80509961af7a9b28f",
+                "customer": { 
+                        "_id": "5c61a20c3bb90e00067b1569",
+                        "activity": "5c597a372441bf0007075f6e",
+                        "country": "5c5979dc2441bf0007075f6d",
+                        "name": "Amazus",
+                        "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                        "email": "contact@amazus.net",
+                        "phone": "71 70 81 80",
+                        "area": "cloud, devops, integration, mobile & chatbot,....",
+                        "empNum": 4,
+                        "sector": false,
+                        "website": "www.amazus.net",
+                        "facebook": "https://www.facebook.com/Amazusconsulting/",
+                        "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                    },
+                "product": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "type": "ODA"
+                    },
+                "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },
+                "projectName": "SAM 1.0",
+                "department": "commercial",
+                "type": "RFP",
+                "budget": 0,
+                "description": "internal project",
+                "closeDate": "2019-01-05T16:00:00Z",
+                "status": "archived",
+                "favorite": true
+            }
+            
+            
+### Modify a Opportunity [PUT /sam/opportunity/{id}]
+
+You may modify a opportunity from the database using the id.
+
++ Parameters
+    + id: 5c597cd80509961af7a9b28f
+    
++ Request (application/json)
+
+        { 
+            "customer": "5c61a20c3bb90e00067b1569",
+            "product": "5c597a752441bf0007075f6f",
+            "user": "5c597c5a0509961af7a9b28e",
+            "projectName": "SAM 1.0",
+            "department": "commercial",
+            "type": "RFP",
+            "budget": 0,
+            "description": "internal project",
+            "closeDate": "2019-01-05T16:00:00Z",
+            "status": "archived",
+            "favorite": false
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Opportunity udpated.
+            
+### Delete a Opportunity [DELETE /sam/opportunity/{id}]
+
+You may delete a opportunity from the database using the id.
+
++ Parameters
+    + id: 5c597cd80509961af7a9b28f
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Deleted successfully!
+
+### Get All Opportunities of a Customer [GET /sam/opportunity/customer/{id}]
+
+You may get all opportunities of a specific customer from the database.
+
++ Parameters
+    + id: 5c61a20c3bb90e00067b1569
+    
++ Response 200 (application/json)
+
+            [
+                { 
+                    "_id": "5c597cd80509961af7a9b28f",
+                    "customer": { 
+                            "_id": "5c61a20c3bb90e00067b1569",
+                            "activity": "5c597a372441bf0007075f6e",
+                            "country": "5c5979dc2441bf0007075f6d",
+                            "name": "Amazus",
+                            "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                            "email": "contact@amazus.net",
+                            "phone": "71 70 81 80",
+                            "area": "cloud, devops, integration, mobile & chatbot,....",
+                            "empNum": 4,
+                            "sector": false,
+                            "website": "www.amazus.net",
+                            "facebook": "https://www.facebook.com/Amazusconsulting/",
+                            "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                        },
+                    "product": {
+                            "_id": "5c597a752441bf0007075f6f",
+                            "type": "ODA"
+                        },
+                    "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },
+                    "projectName": "SAM 1.0",
+                    "department": "commercial",
+                    "type": "RFP",
+                    "budget": 0,
+                    "description": "internal project",
+                    "closeDate": "2019-01-05T16:00:00Z",
+                    "status": "archived",
+                    "favorite": true
+                }
+            ]
+            
+### Get All Opportunities of a Product [GET /sam/opportunity/product/{id}]
+You may get all opportunities of a specific product from the database.
+
++ Parameters
+    + id: 5c597a752441bf0007075f6f
+    
++ Response 200 (application/json)
+
+            [
+                { 
+                    "_id": "5c597cd80509961af7a9b28f",
+                    "customer": { 
+                            "_id": "5c61a20c3bb90e00067b1569",
+                            "activity": "5c597a372441bf0007075f6e",
+                            "country": "5c5979dc2441bf0007075f6d",
+                            "name": "Amazus",
+                            "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                            "email": "contact@amazus.net",
+                            "phone": "71 70 81 80",
+                            "area": "cloud, devops, integration, mobile & chatbot,....",
+                            "empNum": 4,
+                            "sector": false,
+                            "website": "www.amazus.net",
+                            "facebook": "https://www.facebook.com/Amazusconsulting/",
+                            "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                        },
+                    "product": {
+                            "_id": "5c597a752441bf0007075f6f",
+                            "type": "ODA"
+                        },
+                    "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },
+                    "projectName": "SAM 1.0",
+                    "department": "commercial",
+                    "type": "RFP",
+                    "budget": 0,
+                    "description": "internal project",
+                    "closeDate": "2019-01-05T16:00:00Z",
+                    "status": "archived",
+                    "favorite": true
+                }
+            ]
+            
+### Filtering customers [GET /sam/opportunity/{product}/{customer}]
+
+You may filter the list of customers from the database using activity and the name attribute.
+
++ Parameters
+    + product: product
+    + customer: Amazus
+    
++ Response 200 (application/json)
+
+            [
+                { 
+                    "_id": "5c597cd80509961af7a9b28f",
+                    "customer": { 
+                            "_id": "5c61a20c3bb90e00067b1569",
+                            "activity": "5c597a372441bf0007075f6e",
+                            "country": "5c5979dc2441bf0007075f6d",
+                            "name": "Amazus",
+                            "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                            "email": "contact@amazus.net",
+                            "phone": "71 70 81 80",
+                            "area": "cloud, devops, integration, mobile & chatbot,....",
+                            "empNum": 4,
+                            "sector": false,
+                            "website": "www.amazus.net",
+                            "facebook": "https://www.facebook.com/Amazusconsulting/",
+                            "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                        },
+                    "product": {
+                            "_id": "5c597a752441bf0007075f6f",
+                            "type": "product"
+                        },
+                    "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },
+                    "projectName": "SAM 1.0",
+                    "department": "commercial",
+                    "type": "RFP",
+                    "budget": 0,
+                    "description": "internal project",
+                    "closeDate": "2019-01-05T16:00:00Z",
+                    "status": "archived",
+                    "favorite": true
+                }
+            ]
+            
+## Contact Collection [/sam/contact]
+
+### List All Contact [GET]
+
+You may get all the list of contacts exist in your database.
+
++ Response 200 (application/json)
+
+        [
+            { 
+                "_id": "5c597c5a0509961af7a9b28e",
+                "name": "ameur baccoucha",
+                "function": "Oracle Cloud Digital Consultant",
+                "phone": "24 284 999",
+                "email": "ameur.baccoucha@amazus.net",
+                "customer": "5c597c115b29eb39dd31e53c"
+            }
+        ]
+
+### Add a New Contact [POST]
+
+You may add a new contact to the list using this action. It takes a JSON
+object containing the customer, the name, the function, the phone number and the email.
+
++ Request (application/json)
+
+        {
+            "customer": "5c597c115b29eb39dd31e53c",
+            "name": "nabil fatmi",
+            "function": "CEO",
+            "phone": "98 77 00 13",
+            "email": "nabil.fatmi@amazus.net"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Contact Created successfully
+
+
+### Get a Contact [GET /sam/contact/{id}]
+
+You may get a unique contact from the database using the id.
+
++ Parameters
+    + id: 5c597c5a0509961af7a9b28e
+    
++ Response 200 (application/json)
+
+            {
+               "_id": "5c597c5a0509961af7a9b28e",
+                "name": "ameur baccoucha",
+                "function": "Oracle Cloud Digital Consultant",
+                "phone": "24 284 999",
+                "email": "ameur.baccoucha@amazus.net",
+                "customer": "5c597c115b29eb39dd31e53c"
+            }
+            
+            
+### Modify a Contact [PUT /sam/contact/{id}]
+
+You may modify a contact from the database using the id.
+
++ Parameters
+    + id: 5c597c5a0509961af7a9b28e
+    
++ Request (application/json)
+
+        {
+            "customer": "5c597c115b29eb39dd31e53c",
+            "name": "nabil fatmi",
+            "function": "CEO",
+            "phone": "98 77 00 13",
+            "email": "nabil.fatmi@amazus.net"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+    + Body
+
+            Contact udpated.
+            
+### Delete a Contact [DELETE /sam/contact/{id}]
+
+You may delete a contact from the database using the id.
+
++ Parameters
+    + id: 5c597c5a0509961af7a9b28e
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Deleted successfully!
+
+### Get All Contact of a Customer [GET /sam/contact/customer/{id}]
+
+You may get all contacts of a specific customer from the database.
+
++ Parameters
+    + id: 5c597c5a0509961af7a9b28e
+    
++ Response 200 (application/json)
+
+            [
+                { 
+                    "_id": "5c597c5a0509961af7a9b28e",
+                    "name": "ameur baccoucha",
+                    "function": "Oracle Cloud Digital Consultant",
+                    "phone": "24 284 999",
+                    "email": "ameur.baccoucha@amazus.net",
+                    "customer": "5c597c115b29eb39dd31e53c"
+                }
+            ]
+
+## Task Collection [/sam/task]
+
+### List All Tasks [GET]
+
+You may get all the list of tasks exist in your database.
+
++ Response 200 (application/json)
+
+        [
+            { 
+                "_id": "5c5c635526e5cf6a5f72e5b4",
+                "taskType": {
+                    "_id": "5c597af82441bf0007075f70",
+                    "type": "send mail"
+                },
+                "opportunity": { 
+                    "_id": "5c597cd80509961af7a9b28f",
+                    "customer": { 
+                            "_id": "5c61a20c3bb90e00067b1569",
+                            "activity": "5c597a372441bf0007075f6e",
+                            "country": "5c5979dc2441bf0007075f6d",
+                            "name": "Amazus",
+                            "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                            "email": "contact@amazus.net",
+                            "phone": "71 70 81 80",
+                            "area": "cloud, devops, integration, mobile & chatbot,....",
+                            "empNum": 4,
+                            "sector": false,
+                            "website": "www.amazus.net",
+                            "facebook": "https://www.facebook.com/Amazusconsulting/",
+                            "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                        },
+                    "product": {
+                            "_id": "5c597a752441bf0007075f6f",
+                            "type": "ODA"
+                        },
+                    "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },
+                    "projectName": "SAM 1.0",
+                    "department": "commercial",
+                    "type": "RFP",
+                    "budget": 0,
+                    "description": "internal project",
+                    "closeDate": "2019-01-05T16:00:00Z",
+                    "status": "archived",
+                    "favorite": true
+                },
+                "status": "Doing",
+                "priority": 1,
+                "note": "let's do it",
+                "dueDate": "2019-01-05T16:00:00Z"
+            }
+        ]
+
+### Add a New Task [POST]
+
+You may add a new Task to the list using this action. It takes a JSON
+object containing the customer, the name, the function, the phone number and the email.
+
++ Request (application/json)
+
+            { 
+                "taskType": "5c597af82441bf0007075f70",
+                "opportunity": "5c597cd80509961af7a9b28f",
+                "status": "Doing",
+                "priority": 1,
+                "note": "let's do it",
+                "dueDate": "2019-01-05T16:00:00Z"
+            }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Task Created successfully
+
+
+### Get a Task [GET /sam/task/{id}]
+
+You may get a unique task from the database using the id.
+
++ Parameters
+    + id: 5c5c635526e5cf6a5f72e5b4
+    
++ Response 200 (application/json)
+
+            { 
+                "_id": "5c5c635526e5cf6a5f72e5b4"
+                "taskType": {
+                    "_id": "5c597af82441bf0007075f70",
+                    "type": "send mail"
+                },
+                "opportunity": { 
+                    "_id": "5c597cd80509961af7a9b28f",
+                    "customer": { 
+                            "_id": "5c61a20c3bb90e00067b1569",
+                            "activity": "5c597a372441bf0007075f6e",
+                            "country": "5c5979dc2441bf0007075f6d",
+                            "name": "Amazus",
+                            "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                            "email": "contact@amazus.net",
+                            "phone": "71 70 81 80",
+                            "area": "cloud, devops, integration, mobile & chatbot,....",
+                            "empNum": 4,
+                            "sector": false,
+                            "website": "www.amazus.net",
+                            "facebook": "https://www.facebook.com/Amazusconsulting/",
+                            "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                        },
+                    "product": {
+                            "_id": "5c597a752441bf0007075f6f",
+                            "type": "ODA"
+                        },
+                    "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },
+                    "projectName": "SAM 1.0",
+                    "department": "commercial",
+                    "type": "RFP",
+                    "budget": 0,
+                    "description": "internal project",
+                    "closeDate": "2019-01-05T16:00:00Z",
+                    "status": "archived",
+                    "favorite": true
+                },
+                "status": "Doing",
+                "priority": 1,
+                "note": "let's do it",
+                "dueDate": "2019-01-05T16:00:00Z"
+            }
+            
+            
+### Modify a Task [PUT /sam/task/{id}]
+
+You may modify a task from the database using the id.
+
++ Parameters
+    + id: 5c5c635526e5cf6a5f72e5b4
+    
++ Request (application/json)
+
+            { 
+                "taskType": "5c597af82441bf0007075f70",
+                "opportunity": "5c597cd80509961af7a9b28f",
+                "status": "Doing",
+                "priority": 2,
+                "note": "let's do it",
+                "dueDate": "2019-01-05T16:00:00Z"
+            }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Task udpated.
+            
+### Delete a Task [DELETE /sam/task/{id}]
+
+You may delete a task from the database using the id.
+
++ Parameters
+    + id: 5c5c635526e5cf6a5f72e5b4
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Task Created successfully
+
+### Get All Task of a Opportunity [GET /sam/task/opportunity/{id}]
+
+You may get all tasks of a specific opportunity from the database.
+
++ Parameters
+    + id: 5c597cd80509961af7a9b28f
+    
++ Response 200 (application/json)
+
+            [
+                { 
+                    "_id": "5c5c635526e5cf6a5f72e5b4"
+                    "taskType": {
+                        "_id": "5c597af82441bf0007075f70",
+                        "type": "send mail"
+                    },
+                    "opportunity": { 
+                        "_id": "5c597cd80509961af7a9b28f",
+                        "customer": { 
+                                "_id": "5c61a20c3bb90e00067b1569",
+                                "activity": "5c597a372441bf0007075f6e",
+                                "country": "5c5979dc2441bf0007075f6d",
+                                "name": "Amazus",
+                                "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                                "email": "contact@amazus.net",
+                                "phone": "71 70 81 80",
+                                "area": "cloud, devops, integration, mobile & chatbot,....",
+                                "empNum": 4,
+                                "sector": false,
+                                "website": "www.amazus.net",
+                                "facebook": "https://www.facebook.com/Amazusconsulting/",
+                                "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                            },
+                        "product": {
+                                "_id": "5c597a752441bf0007075f6f",
+                                "type": "ODA"
+                            },
+                        "user": {
+                                "_id": "5c597a752441bf0007075f6f",
+                                "username": "Ahmed.roueched@amazus.net",
+                                "displayName":"Ahmed Roueched"
+                            },
+                        "projectName": "SAM 1.0",
+                        "department": "commercial",
+                        "type": "RFP",
+                        "budget": 0,
+                        "description": "internal project",
+                        "closeDate": "2019-01-05T16:00:00Z",
+                        "status": "archived",
+                        "favorite": true
+                    },
+                    "status": "Doing",
+                    "priority": 1,
+                    "note": "let's do it",
+                    "dueDate": "2019-01-05T16:00:00Z"
+                }
+            ]
