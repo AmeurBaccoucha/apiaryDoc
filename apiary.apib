@@ -335,6 +335,94 @@ You may delete a product from the database using the id.
 
             Deleted successfully!
 
+## User Collection [/sam/user]
+
+### List All Country [GET]
+
+You may get all the list of users exist in your database.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "_id": "5c5979dc2441bf0007075f6d",
+                "username": "ahmed.roueched@amazus.net",
+                "password" :"EbkooYds ",
+                "displayName": "Ahmed Roueched"
+            }
+        ]
+
+### Add a New User [POST]
+
+You may add a new user to the list using this action. It takes a JSON
+object containing a user name, apassword and a display name.
+
++ Request (application/json)
+
+        {
+            "username": "ahmed.roueched@amazus.net",
+            "password" :"EbkooYds ",
+            "displayName": "Ahmed Roueched"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            User Created successfully
+
+### Get a User [GET /sam/user/{id}]
+
+You may get a unique user from the database using the id.
+
++ Parameters
+    + id: 5c5979dc2441bf0007075f6d
+    
++ Response 200 (application/json)
+
+            {
+                "_id": "5c5979dc2441bf0007075f6d",
+                "username": "ahmed.roueched@amazus.net",
+                "password" :"EbkooYds ",
+                "displayName": "Ahmed Roueched"
+            }
+            
+            
+### Modify a Country [PUT /sam/user/{id}]
+
+You may modify a user from the database using the id.
+
++ Parameters
+    + id: 5c5979dc2441bf0007075f6d
+    
++ Request (application/json)
+
+        {
+            "_id": "5c5979dc2441bf0007075f6d",
+            "username": "ahmed.roueched@amazus.net",
+            "password" :"EbkooYds ",
+            "displayName": "Ahmed Roueched"
+        }
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            User udpated.
+            
+### Delete a User [DELETE /sam/user/{id}]
+
+You may delete a user from the database using the id.
+
++ Parameters
+    + id: 5c5979dc2441bf0007075f6d
+
++ Response 200 (text/html; charset=utf-8)
+
+    + Body
+
+            Deleted successfully!
+    
 
 ## Customer Collection [/sam/customer]
 
