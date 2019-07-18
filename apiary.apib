@@ -454,7 +454,9 @@ You may get all the list of customers exist in your database.
                 "sector": false,
                 "website": "www.amazus.net",
                 "facebook": "https://www.facebook.com/Amazusconsulting/",
-                "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                "linkedin": "https://www.linkedin.com/company/amazus-technologies/",
+                "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
                 
             }
         ]
@@ -526,10 +528,87 @@ You may get a unique customer from the database using the id.
                 "sector": false,
                 "website": "www.amazus.net",
                 "facebook": "https://www.facebook.com/Amazusconsulting/",
-                "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                "linkedin": "https://www.linkedin.com/company/amazus-technologies/",
+                "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
                 
             }
             
+### Get a list of added Customers [GET /sam/customer/creationDate/{startDate}/{endDate}]
+
+You may get a list of customers that was added between too date from the database using the a start date and an end date.
+
++ Parameters
+    + startDate: mm-dd-yyyy
+    + endDate: mm-dd-yyyy
+    
++ Response 200 (application/json)
+
+            { 
+                "_id": "5c61a20c3bb90e00067b1569",
+                "activity": { 
+                    "_id": "5c597a372441bf0007075f6e",
+                    "name": "IT",
+                    "description": "responsable de l'ensemble des composants matériels.."
+                },
+                "country": {
+                    "_id": "5c5979dc2441bf0007075f6d",
+                    "name": "Tunisie",
+                    "phoneRef": "+216"
+                },
+            
+                "name": "Amazus",
+                "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                "email": "contact@amazus.net",
+                "phone": "71 70 81 80",
+                "area": "cloud, devops, integration, mobile & chatbot,....",
+                "empNum": 4,
+                "sector": false,
+                "website": "www.amazus.net",
+                "facebook": "https://www.facebook.com/Amazusconsulting/",
+                "linkedin": "https://www.linkedin.com/company/amazus-technologies/",
+                "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
+                
+            }
+            
+### Get a list of modified Customers [GET /sam/customer/lastChange/{startDate}/{endDate}]
+
+You may get a list of customers that was modified between too date from the database using the a start date and an end date.
+
++ Parameters
+    + startDate: mm-dd-yyyy
+    + endDate: mm-dd-yyyy
+    
++ Response 200 (application/json)
+
+            { 
+                "_id": "5c61a20c3bb90e00067b1569",
+                "activity": { 
+                    "_id": "5c597a372441bf0007075f6e",
+                    "name": "IT",
+                    "description": "responsable de l'ensemble des composants matériels.."
+                },
+                "country": {
+                    "_id": "5c5979dc2441bf0007075f6d",
+                    "name": "Tunisie",
+                    "phoneRef": "+216"
+                },
+            
+                "name": "Amazus",
+                "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                "email": "contact@amazus.net",
+                "phone": "71 70 81 80",
+                "area": "cloud, devops, integration, mobile & chatbot,....",
+                "empNum": 4,
+                "sector": false,
+                "website": "www.amazus.net",
+                "facebook": "https://www.facebook.com/Amazusconsulting/",
+                "linkedin": "https://www.linkedin.com/company/amazus-technologies/",
+                "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
+                
+            }
             
 ### Modify a Customer [PUT /sam/customer/{id}]
 
@@ -608,7 +687,9 @@ You may filter the list of customers from the database using activity and the na
                     "sector": false,
                     "website": "www.amazus.net",
                     "facebook": "https://www.facebook.com/Amazusconsulting/",
-                    "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                    "linkedin": "https://www.linkedin.com/company/amazus-technologies/",
+                    "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
                     
                 }
             ]
@@ -656,7 +737,9 @@ You may get all the list of opportunities exist in your database.
                 "description": "internal project",
                 "closeDate": "2019-01-05T16:00:00Z",
                 "status": "archived",
-                "favorite": true
+                "favorite": true,
+                "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
             }
         ]
 
@@ -730,8 +813,114 @@ You may get a unique opportunity from the database using the id.
                 "description": "internal project",
                 "closeDate": "2019-01-05T16:00:00Z",
                 "status": "archived",
-                "favorite": true
+                "favorite": true,
+                "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
             }
+            
+
+
+### Get a list of added Opportunities [GET /sam/opportunity/creationDate/{startDate}/{endDate}]
+
+You may get a list of Opportunities that was added between too date from the database using the a start date and an end date.
+
++ Parameters
+    + startDate: mm-dd-yyyy
+    + endDate: mm-dd-yyyy
+    
++ Response 200 (application/json)
+
+            { 
+                "_id": "5c597cd80509961af7a9b28f",
+                "customer": { 
+                        "_id": "5c61a20c3bb90e00067b1569",
+                        "activity": "5c597a372441bf0007075f6e",
+                        "country": "5c5979dc2441bf0007075f6d",
+                        "name": "Amazus",
+                        "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                        "email": "contact@amazus.net",
+                        "phone": "71 70 81 80",
+                        "area": "cloud, devops, integration, mobile & chatbot,....",
+                        "empNum": 4,
+                        "sector": false,
+                        "website": "www.amazus.net",
+                        "facebook": "https://www.facebook.com/Amazusconsulting/",
+                        "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                    },
+                "product": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "type": "ODA"
+                    },
+                "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },
+                "projectName": "SAM 1.0",
+                "department": "commercial",
+                "type": "RFP",
+                "budget": 0,
+                "description": "internal project",
+                "closeDate": "2019-01-05T16:00:00Z",
+                "status": "archived",
+                "favorite": true,
+                "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
+            }
+            
+            
+            
+
+            
+### Get a list of modified Opportunities [GET /sam/opportunity/lastChange/{startDate}/{endDate}]
+
+You may get a list of Opportunities that was modified between too date from the database using the a start date and an end date.
+
++ Parameters
+    + startDate: mm-dd-yyyy
+    + endDate: mm-dd-yyyy
+    
++ Response 200 (application/json)
+
+            { 
+                "_id": "5c597cd80509961af7a9b28f",
+                "customer": { 
+                        "_id": "5c61a20c3bb90e00067b1569",
+                        "activity": "5c597a372441bf0007075f6e",
+                        "country": "5c5979dc2441bf0007075f6d",
+                        "name": "Amazus",
+                        "address": "Résidence Tunis-Carthage Bloc A Bureau A26 , Ariana 2080",
+                        "email": "contact@amazus.net",
+                        "phone": "71 70 81 80",
+                        "area": "cloud, devops, integration, mobile & chatbot,....",
+                        "empNum": 4,
+                        "sector": false,
+                        "website": "www.amazus.net",
+                        "facebook": "https://www.facebook.com/Amazusconsulting/",
+                        "linkedin": "https://www.linkedin.com/company/amazus-technologies/"
+                    },
+                "product": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "type": "ODA"
+                    },
+                "user": {
+                        "_id": "5c597a752441bf0007075f6f",
+                        "username": "Ahmed.roueched@amazus.net",
+                        "displayName":"Ahmed Roueched"
+                    },
+                "projectName": "SAM 1.0",
+                "department": "commercial",
+                "type": "RFP",
+                "budget": 0,
+                "description": "internal project",
+                "closeDate": "2019-01-05T16:00:00Z",
+                "status": "archived",
+                "favorite": true,
+                "creationDate": "2019-07-18T13:38:49.099Z",
+                "lastChange": "2019-07-18T13:39:10.951Z"
+            }
+            
+            
             
             
 ### Modify a Opportunity [PUT /sam/opportunity/{id}]
@@ -869,9 +1058,9 @@ You may get all opportunities of a specific product from the database.
                 }
             ]
             
-### Filtering customers [GET /sam/opportunity/{product}/{customer}]
+### Filtering Opportunity [GET /sam/opportunity/{product}/{customer}]
 
-You may filter the list of customers from the database using activity and the name attribute.
+You may filter the list of opportunity from the database using product and the customer attribute.
 
 + Parameters
     + product: product
